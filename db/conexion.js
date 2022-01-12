@@ -1,13 +1,15 @@
-const xampp = require("xampp");
+const mariadb = require("mariadb");
 
 const config ={
     host: process.env.HOST,
-    user:process.env.USER,
+    user: process.env.USER,
     password: process.env.PASSWORD,
     database : process.env.DATABASE,
-    connectionLimit:process.env.CONN_LIMIT, 
+    connectionLimit: process.env.CONN_LIMIT, 
 };
 
-const pool = xampp.createPool(config);
+console.log(config);
 
-module.exports= pool;
+const pool = mariadb.createPool(config);
+
+module.exports = pool;
